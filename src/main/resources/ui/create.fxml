@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <SplitPane dividerPositions="0.5">
+         <items>
+            <VBox prefHeight="200.0" prefWidth="300.0">
+              <children>
+                <VBox prefHeight="200.0" prefWidth="300.0">
+                  <children>
+                    <HBox>
+                      <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                      </VBox.margin>
+                    </HBox>
+                    <HBox layoutX="20.0" layoutY="20.0">
+                      <children>
+                        <Label minHeight="25.0" minWidth="150.0" prefHeight="25.0" prefWidth="150.0" text="%db.host" />
+                        <TextField fx:id="mysqlDbHostTextView" layoutX="126.0" layoutY="10.0" HBox.hgrow="ALWAYS" />
+                      </children>
+                      <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                      </VBox.margin>
+                    </HBox>
+                    <HBox layoutX="20.0" layoutY="69.0" prefHeight="29.0" prefWidth="600.0">
+                      <children>
+                        <Label minHeight="25.0" minWidth="150.0" prefHeight="25.0" prefWidth="150.0" text="%db.port" />
+                        <TextField fx:id="mysqlDbPortTextView" HBox.hgrow="ALWAYS" />
+                      </children>
+                      <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                      </VBox.margin>
+                    </HBox>
+                    <HBox layoutX="10.0" layoutY="108.0" prefHeight="29.0" prefWidth="600.0">
+                      <children>
+                        <Label minHeight="25.0" minWidth="150.0" prefHeight="25.0" prefWidth="150.0" text="%db.name" />
+                        <TextField fx:id="mysqlDbNameTextView" HBox.hgrow="ALWAYS" />
+                      </children>
+                      <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                      </VBox.margin>
+                    </HBox>
+                    <HBox layoutX="10.0" layoutY="137.0" prefHeight="29.0" prefWidth="600.0">
+                      <children>
+                        <Label minHeight="25.0" minWidth="150.0" prefHeight="25.0" prefWidth="150.0" text="%db.user.name" />
+                        <TextField fx:id="mysqlDbUserNameTextView" HBox.hgrow="ALWAYS" />
+                      </children>
+                      <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                      </VBox.margin>
+                    </HBox>
+                    <HBox layoutX="10.0" layoutY="166.0" prefHeight="29.0" prefWidth="600.0">
+                      <children>
+                        <Label minHeight="25.0" minWidth="150.0" prefHeight="25.0" prefWidth="150.0" text="%db.user.password" />
+                        <PasswordField fx:id="mysqlDbUserPasswordTextView" HBox.hgrow="ALWAYS" />
+                      </children>
+                      <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                      </VBox.margin>
+                    </HBox>
+                  </children>
+                </VBox>
+                <ButtonBar>
+                  <buttons>
+                    <Button fx:id="updateBtn" layoutY="10.0" mnemonicParsing="false" onAction="#mysqlUpdate" text="%update.btn" />
+                  </buttons>
+                  <padding>
+                    <Insets bottom="10.0" left="10.0" right="80.0" top="10.0" />
+                  </padding>
+                </ButtonBar>
+              </children>
+            </VBox>
+            <VBox prefHeight="330.0" prefWidth="417.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="300.0">
+                     <children>
+                        <HBox>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox layoutX="20.0" layoutY="20.0">
+                           <children>
+                              <Label minHeight="25.0" minWidth="150.0" prefHeight="25.0" prefWidth="150.0" text="%db.host" />
+                              <TextField fx:id="postgresDbHostTextView" layoutX="126.0" layoutY="10.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox layoutX="20.0" layoutY="69.0" prefHeight="29.0" prefWidth="600.0">
+                           <children>
+                              <Label minHeight="25.0" minWidth="150.0" prefHeight="25.0" prefWidth="150.0" text="%db.port" />
+                              <TextField fx:id="postgresDbPortTextView" HBox.hgrow="ALWAYS" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="108.0" prefHeight="29.0" prefWidth="600.0">
+                           <children>
+                              <Label minHeight="25.0" minWidth="150.0" prefHeight="25.0" prefWidth="150.0" text="%db.name" />
+                              <TextField fx:id="postgresDbNameTextView" HBox.hgrow="ALWAYS" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="137.0" prefHeight="29.0" prefWidth="600.0">
+                           <children>
+                              <Label minHeight="25.0" minWidth="150.0" prefHeight="25.0" prefWidth="150.0" text="%db.user.name" />
+                              <TextField fx:id="postgresDbUserNameTextView" HBox.hgrow="ALWAYS" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="166.0" prefHeight="29.0" prefWidth="600.0">
+                           <children>
+                              <Label minHeight="25.0" minWidth="150.0" prefHeight="25.0" prefWidth="150.0" text="%db.user.password" />
+                              <PasswordField fx:id="postgresDbUserPasswordTextView" HBox.hgrow="ALWAYS" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <ButtonBar>
+                     <buttons>
+                        <Button fx:id="updateBtn1" layoutY="10.0" mnemonicParsing="false" onAction="#postgresSqlUpdate" text="%update.btn" />
+                     </buttons>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="80.0" top="10.0" />
+                     </padding>
+                  </ButtonBar>
+               </children>
+            </VBox>
+         </items>
+      </SplitPane>
+   </center>
+</BorderPane>

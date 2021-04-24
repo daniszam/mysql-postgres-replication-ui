@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="500.0" maxWidth="600.0" minHeight="500.0" minWidth="600.0" prefHeight="500.0" prefWidth="600.0" styleClass="welcome-screen" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="600.0">
+      <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="600.0" styleClass="welcome-screen-header">
+          <children>
+            <ImageView fitHeight="76.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@database.svg" />
+              </image>
+              <HBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+              </HBox.margin>
+            </ImageView>
+            <Label text="MYSQL TO POSTGRES REPLICATION">
+              <font>
+                <Font size="24.0" />
+              </font>
+            </Label>
+          </children>
+        </HBox>
+        <HBox prefHeight="400.0" prefWidth="600.0" styleClass="welcome-screen-body">
+          <children>
+            <ScrollPane fitToWidth="true" prefWidth="270.0" styleClass="recent-projects">
+              <VBox fx:id="recentConf">
+              </VBox>
+            </ScrollPane>
+            <VBox alignment="CENTER" prefHeight="380.0" prefWidth="350.0">
+              <children>
+                <Button fx:id="createNewConf" disable="false" mnemonicParsing="false" prefHeight="32.0" prefWidth="230.0" text="Create new сonfiguration">
+                  <font>
+                    <Font size="14.0" />
+                  </font>
+                  <VBox.margin>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  </VBox.margin>
+                </Button>
+                <Button fx:id="openConf" mnemonicParsing="false" onAction="#openDirectory" prefHeight="32.0" prefWidth="230.0" text="Open javaFxDatasourceConfiguration">
+                  <font>
+                    <Font size="14.0" />
+                  </font>
+                  <VBox.margin>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  </VBox.margin>
+                </Button>
+              </children>
+            </VBox>
+          </children>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

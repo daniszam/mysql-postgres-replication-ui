@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <Label text="mysql to postgres replication" StackPane.alignment="TOP_CENTER">
+      <padding>
+        <Insets top="90.0" />
+      </padding>
+      <font>
+        <Font size="24.0" />
+      </font>
+    </Label>
+    <ProgressBar fx:id="progressBar" prefHeight="20.0" prefWidth="385.0">
+      <StackPane.margin>
+        <Insets top="30.0" />
+      </StackPane.margin>
+         <effect>
+            <Reflection topOpacity="1.0" />
+         </effect>
+    </ProgressBar>
+  </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</StackPane>

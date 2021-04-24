@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1">
+  <content>
+    <AnchorPane prefWidth="480.0">
+      <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </padding>
+      <TableView fx:id="tableView" layoutX="20.0" layoutY="7.0" prefHeight="189.0" prefWidth="460.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <columns>
+          <TableColumn fx:id="schemaSelectCol" minWidth="-Infinity" prefWidth="50.0" text="%db.schema.select" />
+          <TableColumn fx:id="schemaNameCol" minWidth="-Infinity" prefWidth="350.0" text="%db.schema" />
+        </columns></TableView>
+    </AnchorPane>
+  </content>
+  <header>
+    <AnchorPane prefHeight="55.0" prefWidth="480.0">
+      <children>
+        <Label layoutX="37.0" layoutY="15.0" prefHeight="30.0" prefWidth="313.0" text="%schema.select.dlg.title">
+          <font>
+            <Font size="17.0" />
+          </font>
+        </Label>
+      </children>
+    </AnchorPane>
+  </header>
+  <buttonTypes>
+    <ButtonType fx:constant="YES" />
+    <ButtonType fx:constant="CANCEL" />
+  </buttonTypes>
+</DialogPane>
