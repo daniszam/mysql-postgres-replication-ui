@@ -2,6 +2,7 @@ package ru.darzam.mysql_postgres_replication_ui;
 
 import com.sun.deploy.uitoolkit.impl.fx.FXPreloader;
 import com.sun.javafx.application.LauncherImpl;
+import de.codecentric.centerdevice.javafxsvg.SvgImageLoaderFactory;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
@@ -16,6 +17,7 @@ public class Main extends Application {
 
 
   public static void main(String[] args) {
+    SvgImageLoaderFactory.install();
     LauncherImpl.launchApplication(Main.class, PreloaderImpl.class, args);
   }
 
