@@ -16,7 +16,7 @@
    <center>
       <SplitPane dividerPositions="0.5">
          <items>
-            <VBox prefHeight="200.0" prefWidth="300.0">
+            <VBox fx:id="mysqlVbox" prefHeight="200.0" prefWidth="300.0">
               <children>
                 <VBox prefHeight="200.0" prefWidth="300.0">
                   <children>
@@ -82,7 +82,7 @@
                 </ButtonBar>
               </children>
             </VBox>
-            <VBox prefHeight="330.0" prefWidth="417.0">
+            <VBox fx:id="postgresqlVbox" prefHeight="330.0" prefWidth="417.0">
                <children>
                   <VBox prefHeight="200.0" prefWidth="300.0">
                      <children>

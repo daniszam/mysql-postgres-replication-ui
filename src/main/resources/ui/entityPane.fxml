@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import ru.cg.webbpm.studio.subsystem.database.editors.entity_graph.textfield.ValidableTextField?>
+<HBox alignment="CENTER" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/8.0.40"
+      xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <AnchorPane>
+      <children>
+        <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <children>
+            <HBox>
+              <children>
+                <Label prefHeight="25.0" prefWidth="150.0" text="%esEditor.selected.properties.entity.name"/>
+                <ValidableTextField fx:id="entityName" HBox.hgrow="ALWAYS"/>
+              </children>
+              <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+              </VBox.margin>
+            </HBox>
+            <HBox layoutX="20.0" layoutY="20.0">
+              <children>
+                <Label prefHeight="25.0" prefWidth="150.0" text="%esEditor.selected.properties.entity.schema"/>
+                <TextField fx:id="entitySchema" disable="true" layoutX="126.0" layoutY="10.0" HBox.hgrow="ALWAYS"/>
+              </children>
+              <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+              </VBox.margin>
+            </HBox>
+            <HBox layoutX="20.0" layoutY="69.0">
+              <children>
+                <Label prefHeight="25.0" prefWidth="150.0" text="%esEditor.selected.properties.entity.table"/>
+                <TextField fx:id="entityTable" disable="true" HBox.hgrow="ALWAYS"/>
+              </children>
+              <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+              </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="108.0">
+              <children>
+                <Label prefHeight="25.0" prefWidth="150.0" text="%esEditor.selected.properties.entity.mainFlag"/>
+                <CheckBox fx:id="entityMainFlag" HBox.hgrow="ALWAYS"/>
+              </children>
+              <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+              </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="108.0">
+              <children>
+                <Label prefHeight="25.0" prefWidth="150.0" text="%esEditor.selected.properties.entity.emptyEntityAction"/>
+                <ComboBox fx:id="emptyEntityAction" HBox.hgrow="ALWAYS"/>
+              </children>
+              <VBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+              </VBox.margin>
+            </HBox>
+          </children>
+        </VBox>
+      </children>
+    </AnchorPane>
+    <AnchorPane HBox.hgrow="ALWAYS">
+      <children>
+        <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                    AnchorPane.topAnchor="0.0">
+          <content>
+            <AnchorPane fx:id="entityConditionsBox">
+              <padding>
+                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0"/>
+              </padding>
+            </AnchorPane>
+          </content>
+          <padding>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0"/>
+          </padding>
+        </ScrollPane>
+      </children>
+    </AnchorPane>
+  </children>
+</HBox>

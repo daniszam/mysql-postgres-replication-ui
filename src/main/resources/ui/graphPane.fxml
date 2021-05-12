@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <HBox alignment="CENTER_LEFT" styleClass="es-editor-panel" VBox.vgrow="ALWAYS">
+      <children>
+        <Label text="%esEditor.properties">
+          <HBox.margin>
+            <Insets left="10.0" />
+          </HBox.margin>
+        </Label>
+      </children>
+    </HBox>
+    <AnchorPane>
+      <children>
+        <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <content>
+            <AnchorPane fx:id="graphConditionsBox">
+              <padding>
+                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+              </padding>
+            </AnchorPane>
+          </content>
+          <padding>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+          </padding>
+        </ScrollPane>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

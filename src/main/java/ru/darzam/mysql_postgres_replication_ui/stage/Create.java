@@ -2,17 +2,25 @@ package ru.darzam.mysql_postgres_replication_ui.stage;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import ru.darzam.mysql_postgres_replication_ui.css.Css;
+import ru.darzam.mysql_postgres_replication_ui.css.Icons;
 import ru.darzam.mysql_postgres_replication_ui.datasource.DatasourceConfiguration;
 import ru.darzam.mysql_postgres_replication_ui.datasource.DbManager;
 import ru.darzam.mysql_postgres_replication_ui.datasource.JavaFxDatasourceConfiguration;
 import ru.darzam.mysql_postgres_replication_ui.exception.JavaFxException;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.List;
@@ -40,6 +48,8 @@ public class Create extends Stage {
   private TextField mysqlDbUserNameTextView;
   @FXML
   private TextField mysqlDbUserPasswordTextView;
+  @FXML
+  private VBox mysqlVbox;
 
   @FXML
   private TextField postgresDbHostTextView;
@@ -51,6 +61,8 @@ public class Create extends Stage {
   private TextField postgresDbUserNameTextView;
   @FXML
   private TextField postgresDbUserPasswordTextView;
+  @FXML
+  private VBox postgresqlVbox;
 
   public Create() {
     initOwner(Primary.getPrimaryStage());
@@ -119,7 +131,7 @@ public class Create extends Stage {
     datasource.setDbName(mysqlDbNameTextView.getText());
     datasource.setUser(mysqlDbUserNameTextView.getText());
     datasource.setPassword(mysqlDbUserPasswordTextView.getText());
-    datasource.setDriverClassName("com.mysql.jdbc.Driver");
+    datasource.setDriverClassName("com.mysql.cj.jdbc.Driver");
     datasource.setUrl("jdbc:mysql:" + "//" + datasource.getHost() + ":" + datasource.getPort() + "/" + datasource.getDbName());
     try {
       datasource.setDbBeanPackage(Files.createTempDirectory("db-package").toString());
@@ -128,6 +140,13 @@ public class Create extends Stage {
     catch (Exception e) {
       throw new JavaFxException(bundle.getString("db.connection.error.msg"), e);
     }
+    mysqlVbox.getChildren().clear();
+    BorderPane borderPane = new BorderPane();
+    ImageView imageView = new ImageView(Icons.SUCCESS_CONNECTION);
+    BorderPane.setAlignment(imageView, Pos.CENTER);
+    BorderPane.setMargin(imageView, new Insets(100,100,100,100)); // optional
+    borderPane.setCenter(imageView);
+    mysqlVbox.getChildren().addAll(borderPane);
 
 //    SelectSchemaDlg selectSchemaDlg = new SelectSchemaDlg(getIdeWindow(), internalDatabaseManager, datasource);
 //    Optional<List<String>> selectedSchemas = selectSchemaDlg.showAndWait();
@@ -154,6 +173,31 @@ public class Create extends Stage {
   }
 
   public void postgresSqlUpdate() {
+    DatasourceConfiguration datasource = new DatasourceConfiguration();
+    datasource.setHost(postgresDbHostTextView.getText());
+    Integer port = postgresDbPortTextView.getText() != null && !postgresDbPortTextView.getText().isEmpty() ?
+        Integer.parseInt(postgresDbPortTextView.getText()) :
+        null;
+    datasource.setPort(port);
+    datasource.setDbName(postgresDbNameTextView.getText());
+    datasource.setUser(postgresDbUserNameTextView.getText());
+    datasource.setPassword(postgresDbUserPasswordTextView.getText());
+    datasource.setDriverClassName("org.postgresql.Driver");
+    datasource.setUrl("jdbc:postgresql:" + "//" + datasource.getHost() + ":" + datasource.getPort() + "/" + datasource.getDbName());
+    try {
+      datasource.setDbBeanPackage(Files.createTempDirectory("db-package").toString());
+      dbManager.testConnection(datasource);
+    }
+    catch (Exception e) {
+      throw new JavaFxException(bundle.getString("db.connection.error.msg"), e);
+    }
 
+    postgresqlVbox.getChildren().clear();
+    BorderPane borderPane = new BorderPane();
+    ImageView imageView = new ImageView(Icons.SUCCESS_CONNECTION);
+    BorderPane.setAlignment(imageView, Pos.CENTER);
+    BorderPane.setMargin(imageView, new Insets(100,100,100,100)); // optional
+    borderPane.setCenter(imageView);
+    postgresqlVbox.getChildren().addAll(borderPane);
   }
 }
